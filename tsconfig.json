@@ -29,7 +29,8 @@
       "store/*": [
         "src/store/*"
       ]
-    }
+    },
+    "jsx": "react"
   },
   "include": [
     "src"

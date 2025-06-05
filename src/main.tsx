@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from 'components/App';
 import ProgressBar from 'components/layout/ProgressBar';
 import BottomNavigation from 'components/shared/BottomNavigation';
@@ -10,9 +11,11 @@ import 'styles/index.scss';
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <StrictMode>
-      <ProgressBar />
-      <App />
-      <BottomNavigation />
+      <BrowserRouter>
+        <ProgressBar />
+        <App />
+        <BottomNavigation />
+      </BrowserRouter>
     </StrictMode>
   </Provider>
 );
