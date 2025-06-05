@@ -1,0 +1,29 @@
+.button-default {
+  border-radius: 100px;
+  color: $c-button-text;
+  padding: 10px 24px;
+  background-color: $c-button-bg;
+  cursor: pointer;
+  border: unset;
+
+  &:hover {
+    background-color: $c-button-bg-hover;
+  }
+}
+
+.button-loading {
+  color: $c-button-text;
+  cursor: progress;
+}
+
+.button-disabled {
+  background-color: $c-button-disabled-bg;
+  color: $c-button-disabled-text;
+  cursor: not-allowed;
+  border: unset;
+
+  &:hover {
+    background-color: $c-button-disabled-bg;
+    color: $c-button-disabled-text;
+  }
+}

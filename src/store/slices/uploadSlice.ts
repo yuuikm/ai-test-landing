@@ -6,8 +6,8 @@ type UploadState = {
 };
 
 const initialState: UploadState = {
-  files: [null, null, null],
-  taskId: null,
+  files: [],
+  taskId: localStorage.getItem('task_id') || null,
 };
 
 const uploadSlice = createSlice({

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Steps from 'components/shared/Steps';
+import Button from 'components/shared/Button';
 import { setTaskId } from 'store/slices/uploadSlice';
 import { type RootState } from '@/store';
 
@@ -30,6 +31,7 @@ const BottomNavigation: FC = () => {
           formData
         );
         dispatch(setTaskId(res.data.task_id));
+        localStorage.setItem('task_id', res.data.task_id);
         alert(`Успешно отправлено! task_id: ${res.data.task_id}`);
         navigate('/questionnaire');
       } else if (location.pathname === '/questionnaire') {
@@ -48,9 +50,9 @@ const BottomNavigation: FC = () => {
   return (
     <div className='bottom-navigation-wrapper container'>
       <Steps />
-      <button type='button' disabled={isButtonDisabled} onClick={handleSubmit}>
-        {loading ? 'Отправка...' : 'Далее'}
-      </button>
+      <Button disabled={isButtonDisabled} onClick={handleSubmit} loading={loading}>
+        Далее
+      </Button>
     </div>
   );
 };
