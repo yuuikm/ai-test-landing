@@ -34,20 +34,11 @@
       "components/*": [
         "src/components/*"
       ],
-      "entities/*": [
-        "src/entities/*"
+      "assets/*": [
+        "src/assets/*"
       ],
-      "features/*": [
-        "src/features/*"
-      ],
-      "pages/*": [
-        "src/pages/*"
-      ],
-      "shared/*": [
-        "src/shared/*"
-      ],
-      "store/*": [
-        "src/store/*"
+      "constants/*": [
+        "src/constants/*"
       ]
     }
   },

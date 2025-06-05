@@ -1,5 +1,11 @@
+import UploadImage from 'components/UploadImage';
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <UploadImage />
+    </>
+  );
 }
 
 export default App;
