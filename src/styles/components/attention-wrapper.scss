@@ -1,14 +1,21 @@
 .attention-wrapper {
-  display: flex;
   background-color: $c-attention-bg;
   border-radius: 100px;
   box-sizing: border-box;
   width: fit-content;
 
-  .attention-description {
-    color: $c-attention-text;
-    font-weight: 400;
-    font-size: 14px;
+  .attention-info {
+    display: flex;
     padding: 8px 12px;
+
+    .attention-icon {
+      padding-right: 8px;
+    }
+
+    .attention-description {
+      color: $c-attention-text;
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
 }
