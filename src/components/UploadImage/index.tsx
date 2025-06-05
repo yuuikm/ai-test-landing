@@ -11,8 +11,8 @@ const UploadImage: FC = () => {
       <Title title={TEXTS.uploadImageTitle} />
       <Attention />
       <div className='upload-image-icons'>
-        {UPLOAD_FILE_ITEMS.map(({ id, title }) => (
-          <UploadFile key={id} title={title} />
+        {UPLOAD_FILE_ITEMS.map(({ id, title }, index) => (
+          <UploadFile key={id} title={title} index={index} />
         ))}
       </div>
     </div>

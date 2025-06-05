@@ -2,7 +2,7 @@
 import { type FC } from 'react';
 
 const Steps: FC = () => {
-  return <div>Steps</div>;
+  return <p className='steps'>Шаг 1/3</p>;
 };
 
 export default Steps;

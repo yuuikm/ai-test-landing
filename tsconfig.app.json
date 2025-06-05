@@ -39,6 +39,9 @@
       ],
       "constants/*": [
         "src/constants/*"
+      ],
+      "store/*": [
+        "src/store/*"
       ]
     }
   },

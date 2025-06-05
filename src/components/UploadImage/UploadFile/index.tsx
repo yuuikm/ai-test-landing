@@ -1,11 +1,15 @@
 import { type FC, useRef, useState } from 'react';
 import uploadIcon from 'assets/icons/uploadIcon.svg';
+import { useDispatch } from 'react-redux';
+import { setFile } from 'store/slices/uploadSlice';
 
 type UploadFileProps = {
   title: string;
+  index: number;
 };
 
-const UploadFile: FC<UploadFileProps> = ({ title }) => {
+const UploadFile: FC<UploadFileProps> = ({ title, index }) => {
+  const dispatch = useDispatch();
   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -16,10 +20,9 @@ const UploadFile: FC<UploadFileProps> = ({ title }) => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      dispatch(setFile({ index, file }));
       const reader = new FileReader();
-      reader.onloadend = () => {
-        setBackgroundImage(reader.result as string);
-      };
+      reader.onloadend = () => setBackgroundImage(reader.result as string);
       reader.readAsDataURL(file);
     }
   };
@@ -43,6 +46,7 @@ const UploadFile: FC<UploadFileProps> = ({ title }) => {
           accept='image/*'
           ref={fileInputRef}
           onChange={handleFileChange}
+          style={{ display: 'none' }}
         />
       </div>
       <p className='upload-button-title'>{title}</p>
